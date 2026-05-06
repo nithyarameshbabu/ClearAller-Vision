@@ -31,6 +31,10 @@ Copy:
 - `backend/.env.example` to `backend/.env`
 - `frontend/.env.example` to `frontend/.env`
 
+For deployed frontend builds, set:
+
+- `frontend/.env` or hosting env: `VITE_API_URL=https://clearaller-vision-api.onrender.com`
+
 ## Install
 
 ```bash
@@ -45,6 +49,10 @@ npm.cmd run dev
 
 Frontend defaults to `http://localhost:5173`.
 Backend defaults to `http://localhost:4000`.
+
+When the frontend is opened from a deployed domain, it falls back to:
+
+- `https://clearaller-vision-api.onrender.com`
 
 ## Database
 

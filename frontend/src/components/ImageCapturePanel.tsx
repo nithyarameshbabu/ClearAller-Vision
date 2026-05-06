@@ -69,6 +69,14 @@ export function ImageCapturePanel({
       .map((line) => line.trim())
       .filter(Boolean);
 
+    const labelRows = lines
+      .map((line) => line.replace(/\s{2,}/g, " ").trim())
+      .filter((line) => /allergen\s*information|special\s*ingredients|ingredients?\s*[:\-]/i.test(line));
+
+    if (labelRows.length) {
+      return labelRows.join(", ");
+    }
+
     const ingredientLineIndex = lines.findIndex((line) => /ingredients?\s*[:\-]/i.test(line));
     if (ingredientLineIndex >= 0) {
       const followingLines = lines.slice(ingredientLineIndex);
