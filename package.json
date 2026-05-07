@@ -9,7 +9,7 @@
                    ],
     "scripts":  {
                     "dev":  "node scripts/dev-runner.cjs",
-                    "build:frontend:netlify":  "npm run build --workspace shared && npm run build --workspace frontend",
+                    "build:frontend:netlify":  "npm run build --workspace shared && npm run build --workspace backend && npm run build --workspace frontend",
                     "build":  "npm run build --workspace shared \u0026\u0026 npm run build --workspace backend \u0026\u0026 npm run build --workspace frontend",
                     "lint":  "npm run lint --workspace backend \u0026\u0026 npm run lint --workspace frontend",
                     "test":  "npm run test --workspace backend \u0026\u0026 npm run test --workspace frontend"
